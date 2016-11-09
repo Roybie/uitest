@@ -4,26 +4,20 @@ block content
     .chatwrapper
         .chatwindow
             .chatheader
+                .chatuser
+                    .useravatar
+                        img(src='imgs/male/099m.jpg')
+                    .username Roybie
             .chatmessages
-                .chatbubble
-                    p Some Text
-                .chatbubble
-                    p A reply!
-                .chatbubble
-                    p Some Text
-                .chatbubble
-                    p A reply!
-                .chatbubble
-                    p Some Text
-                .chatbubble
-                    p A reply!
-                .chatbubble
-                    p Some Text
-                .chatbubble
-                    p A reply!
-                .chatbubble
-                    p Some Text
-                .chatbubble
-                    p A reply! That is longer than you were expecting! By some way I suppose.
             .chatinput
+                textarea(placeholder="Type your message" name="inputtext" id="inputtext" rows="2")
+                .chatsend Send
         .chatusers
+            .userslist
+                .chatuser
+                    .useravatar
+                        img(src='imgs/male/099m.jpg')
+                    .username Roybie
+
+    script(src='js/main.js')
+
