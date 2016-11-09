@@ -36,10 +36,36 @@ body {
   border-radius: 5px 0 0 0;
   display: inline-block;
   height: 50px;
-  z-index: 10;
+  z-index: 11;
+}
+.chatheader .chatuser {
+  width: auto;
 }
 .chatheader .chatuser .username {
   color: #a9a9a9;
+}
+.chatsettings {
+  background: url("../imgs/settings.png");
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: 26px;
+  margin: 12px;
+  position: relative;
+  width: 26px;
+}
+.chatsettings .settings {
+  background: #999;
+  height: 0px;
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  width: 0px;
+  z-index: 999;
+}
+.chatsettings .settings .settings_adduser {
+  display: inline-block;
 }
 .chatmessages {
   background: #f0f8ff;

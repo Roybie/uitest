@@ -8,6 +8,13 @@ block content
                     .useravatar
                         img(src='imgs/male/099m.jpg')
                     .username Roybie
+                .chatsettings
+                    .settings
+                        .settings_adduser Add User
+                        .settings_remuser
+                            input(placeholder="username to remove" id="remuser")
+                        .settings_addmsg
+                            input(placeholder="# of messages" id="addmsg")
             .chatmessages
             .chatinput
                 textarea(placeholder="Type your message" name="inputtext" id="inputtext" rows="2")

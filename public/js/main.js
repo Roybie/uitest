@@ -1,3 +1,4 @@
+var $settingsopen = false;
 var $currentuser = 0;
 var $names = [
     "JOOLS",
@@ -147,7 +148,9 @@ $removeuser = function(name) {
 
     if ($rem.length > 0) {
         $notifyroom(name + ' has left');
+        return true;
     }
+    return false;
 }
 
 $notifyroom = function(message) {
@@ -179,4 +182,47 @@ $(function() {
         $('#inputtext').focus();
     });
 
+    $('.chatsettings').click(function() {
+        if ($settingsopen) {
+            $('.settings').animate({height: '0px', width: '0px'}, 400);
+            $settingsopen = false
+        } else {
+            $('.settings').animate({height: '100px', width:'200px'}, 400);
+            $settingsopen = true;
+        }
+    });
+
+    $('.settings_adduser').click(function(e) {
+        $adduser();
+        e.stopPropagation();
+    });
+
+    $('#remuser').click(function(e) {
+        e.stopPropagation();
+    });
+
+    $('#remuser').keypress(function(e) {
+        if (e.which === 13) {
+            var success = $removeuser($('#remuser').val());
+            if (success) {
+                $('#remuser').val('');
+            }
+        }
+    });
+
+    $('#addmsg').click(function(e) {
+        e.stopPropagation();
+    });
+
+    $('#addmsg').keypress(function(e) {
+        if (e.which === 13) {
+            var msgs = parseInt($('#addmsg').val());
+            if (msgs) {
+                for (var i = 0; i < msgs; i++) {
+                    $addmessage('Test message!\nAuto added.', 'JOOLS');
+                }
+                $('#addmsg').val('');
+            }
+        }
+    });
 });
