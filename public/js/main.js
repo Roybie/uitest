@@ -99,23 +99,6 @@ var $names = [
     "BANJO",
     "BEAKER",
     "BASIL",
-    "BONZO",
-    "KELVIN",
-    "RONNIE",
-    "RUPERT",
-    "ROO",
-    "DAN",
-    "JIMMY",
-    "RONNIE",
-    "BOB",
-    "DON",
-    "TOMMY",
-    "EDDIE",
-    "OZZY",
-    "MARK",
-    "PADDY",
-    "ARNOLD",
-    "TONY",
 ];
 
 $scroll = function() {
@@ -158,6 +141,14 @@ $adduser = function() {
 
     $notifyroom($username.html() + ' has joined');
 };
+
+$removeuser = function(name) {
+    $rem = $('.chatuser').filter(function() {return $(this).children().eq(1).html() === name}).remove();
+
+    if ($rem.length > 0) {
+        $notifyroom(name + ' has left');
+    }
+}
 
 $notifyroom = function(message) {
     $addmessage(null, message);
