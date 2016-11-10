@@ -13,6 +13,15 @@ Once cloned simply run `npm install`
 
 To run `npm start` then direct browser to localhost:3000
 
+### Admin functions
+Clicking the settings cog, opens a basic test admin panel.
+
+Clicking 'Add User' adds a user.
+
+To remove user, type the name (case-sensitive) in the remove user text box and hit enter.
+
+To add messages type the number of messages in the add messages text box and hit enter.
+
 ### Design decisions
 To keep it simple and quick to get up and running I decided to go with node.js/express.
 
